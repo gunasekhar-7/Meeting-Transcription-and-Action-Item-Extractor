@@ -1,0 +1,160 @@
+{
+  "report": "pipeline-conformance",
+  "generated_at": "2026-11-03T06:07:10.913532+00:00",
+  "component": "RuleBasedLLM + Pydantic validation + quote verifier",
+  "dataset": "3 synthetic text fixtures in eval/fixtures/transcripts",
+  "not_measured": [
+    "LLM extraction quality",
+    "ASR word error rate",
+    "speaker diarization error rate",
+    "real meeting audio"
+  ],
+  "limitations": [
+    "Synthetic transcripts were written by the author, not collected meetings.",
+    "The deterministic fallback is not the production model; these numbers do not predict LLM performance.",
+    "Three samples are too few for statistical claims."
+  ],
+  "aggregate": {
+    "sample_count": 3,
+    "decisions": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 0
+    },
+    "actions": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positives": 4,
+      "false_positives": 0,
+      "false_negatives": 0
+    },
+    "owner_accuracy": 0.5,
+    "owner_evaluated_items": 2,
+    "evidence_grounding_rate": 1.0,
+    "invented_owner_count": 0
+  },
+  "samples": [
+    {
+      "sample_id": "launch-planning",
+      "description": "Explicit decision, one addressed action, one volunteered action.",
+      "counts": {
+        "predicted_decisions": 1,
+        "expected_decisions": 1,
+        "predicted_actions": 2,
+        "expected_actions": 2
+      },
+      "decisions": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "matches": [
+          {
+            "similarity": 1.0,
+            "expected": "We agreed to move the launch to the twentieth of November.",
+            "predicted": "We agreed to move the launch to the twentieth of November."
+          }
+        ]
+      },
+      "actions": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "owner_hits": 1,
+        "owner_total": 1,
+        "matches": [
+          {
+            "similarity": 1.0,
+            "expected": "Ada, can you prepare the migration checklist before Friday?",
+            "predicted": "Ada, can you prepare the migration checklist before Friday?"
+          },
+          {
+            "similarity": 1.0,
+            "expected": "Yes, I will also update the pricing deck.",
+            "predicted": "Yes, I will also update the pricing deck."
+          }
+        ]
+      },
+      "grounding": {
+        "predicted_items": 3,
+        "verified_items": 3,
+        "invented_owners": 0
+      },
+      "unmatched_predictions": []
+    },
+    {
+      "sample_id": "pricing-review",
+      "description": "Two commitments, one with an implicit owner and no explicit decision.",
+      "counts": {
+        "predicted_decisions": 0,
+        "expected_decisions": 0,
+        "predicted_actions": 2,
+        "expected_actions": 2
+      },
+      "decisions": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "matches": []
+      },
+      "actions": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "owner_hits": 0,
+        "owner_total": 1,
+        "matches": [
+          {
+            "similarity": 1.0,
+            "expected": "Ravi will send the pricing deck by Friday.",
+            "predicted": "Ravi will send the pricing deck by Friday."
+          },
+          {
+            "similarity": 1.0,
+            "expected": "We need to confirm the enterprise discount before the quarter ends.",
+            "predicted": "We need to confirm the enterprise discount before the quarter ends."
+          }
+        ]
+      },
+      "grounding": {
+        "predicted_items": 2,
+        "verified_items": 2,
+        "invented_owners": 0
+      },
+      "unmatched_predictions": []
+    },
+    {
+      "sample_id": "status-only",
+      "description": "Negative case: a status update with no decisions and no commitments.",
+      "counts": {
+        "predicted_decisions": 0,
+        "expected_decisions": 0,
+        "predicted_actions": 0,
+        "expected_actions": 0
+      },
+      "decisions": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "matches": []
+      },
+      "actions": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "owner_hits": 0,
+        "owner_total": 0,
+        "matches": []
+      },
+      "grounding": {
+        "predicted_items": 0,
+        "verified_items": 0,
+        "invented_owners": 0
+      },
+      "unmatched_predictions": []
+    }
+  ]
+}

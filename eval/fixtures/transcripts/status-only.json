@@ -1,0 +1,22 @@
+{
+  "sample_id": "status-only",
+  "description": "Negative case: a status update with no decisions and no commitments.",
+  "segments": [
+    {
+      "id": 1,
+      "speaker": "SPEAKER_00",
+      "start_ms": 0,
+      "text": "The migration is on track and the team is comfortable with the timeline."
+    },
+    {
+      "id": 2,
+      "speaker": "SPEAKER_01",
+      "start_ms": 7000,
+      "text": "No blockers to report today."
+    }
+  ],
+  "expected": {
+    "decisions": [],
+    "actions": []
+  }
+}

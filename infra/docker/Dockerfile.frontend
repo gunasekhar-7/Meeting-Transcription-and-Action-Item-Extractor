@@ -1,0 +1,21 @@
+FROM python:3.12-slim AS runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    STREAMLIT_SERVER_HEADLESS=true
+
+WORKDIR /app
+
+RUN groupadd --system app && useradd --system --gid app --create-home app
+
+COPY frontend/pyproject.toml ./pyproject.toml
+COPY frontend/streamlit_app ./streamlit_app
+
+RUN pip install --no-cache-dir . && chown -R app:app /app
+
+USER app
+EXPOSE 8501
+
+CMD ["streamlit", "run", "streamlit_app/app.py", \
+     "--server.address=0.0.0.0", "--server.port=8501"]

@@ -1,0 +1,21 @@
+{
+  "report": "asr-smoke",
+  "generated_at": "2026-11-02T20:05:04.568450+00:00",
+  "model": "tiny",
+  "compute_type": "int8",
+  "provider": "faster_whisper",
+  "audio": "single synthetic Windows SAPI TTS clip",
+  "audio_seconds": 9.643,
+  "processing_seconds": 1.251,
+  "real_time_factor": 0.1297,
+  "word_error_rate": 0.0455,
+  "reference": "Good morning. We agreed to move the launch to the twentieth of November. Ada, can you prepare the migration checklist before Friday?",
+  "hypothesis": "Good morning. We agreed to move the launch to the 20th of November. Ada, can you prepare the migration checklist before Friday?",
+  "segment_count": 2,
+  "caveats": [
+    "One synthetic, single-speaker, clean TTS clip.",
+    "tiny int8 is the smallest Whisper model, not the production default.",
+    "This is not a meeting-audio WER benchmark and has no confidence interval.",
+    "Model download time is excluded from processing_seconds."
+  ]
+}

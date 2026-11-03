@@ -1,0 +1,85 @@
+# ---- Secrets and local configuration (never commit) ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+.hf_token
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.benchmarks/
+
+# ---- Node (only if tooling is added later) ----
+node_modules/
+
+# ---- Runtime data: audio, uploads, databases, caches ----
+data/
+!data/.gitkeep
+uploads/
+tmp/
+*.db
+*.sqlite3
+*.sqlite
+minio_data/
+pgdata/
+redis_data/
+models/
+.cache/
+whisper_cache/
+hf_cache/
+
+# ---- Audio and video: never commit recordings ----
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+*.webm
+*.mp4
+*.mov
+*.rttm
+*.TextGrid
+# Sample audio explicitly allowed (short, self-recorded, consented)
+!eval/annotations/**/*.jsonl
+!eval/annotations/**/*.json
+!examples/audio/.gitkeep
+
+# ---- Evaluation corpora (downloaded by script, licence-bound) ----
+eval/data/raw/
+eval/data/processed/
+eval/datasets/downloads/
+
+# ---- Build and deployment artefacts ----
+*.log
+logs/
+dist/
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+caddy_data/
+caddy_config/
+
+# ---- Editors and OS ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

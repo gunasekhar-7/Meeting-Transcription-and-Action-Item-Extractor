@@ -1,0 +1,41 @@
+{
+  "sample_id": "launch-planning",
+  "description": "Explicit decision, one addressed action, one volunteered action.",
+  "segments": [
+    {
+      "id": 1,
+      "speaker": "SPEAKER_00",
+      "start_ms": 0,
+      "text": "Good morning. We agreed to move the launch to the twentieth of November."
+    },
+    {
+      "id": 2,
+      "speaker": "SPEAKER_01",
+      "start_ms": 6000,
+      "text": "Ada, can you prepare the migration checklist before Friday?"
+    },
+    {
+      "id": 3,
+      "speaker": "SPEAKER_00",
+      "start_ms": 12000,
+      "text": "Yes, I will also update the pricing deck."
+    }
+  ],
+  "expected": {
+    "decisions": [
+      {
+        "text": "We agreed to move the launch to the twentieth of November."
+      }
+    ],
+    "actions": [
+      {
+        "text": "Ada, can you prepare the migration checklist before Friday?",
+        "owner": "Ada"
+      },
+      {
+        "text": "Yes, I will also update the pricing deck.",
+        "owner": null
+      }
+    ]
+  }
+}
